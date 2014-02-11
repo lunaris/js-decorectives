@@ -10,23 +10,21 @@
     </style>
   </head>
   <body ng-controller="HomeCtrl">
-    <div composite>
-      <div component="first">Foo</div>
-      <div component="second">Bar</div>
+    <div>
+      Mobile number: {{ mobileNumber }}
+      PIN: {{ pin }}
     </div>
-    <div confirm-mobile-number="cmn">
-      <div>
-        <input type="tel" placeholder="Your mobile number"
+    <div confirm-mobile-number="cmn" composite>
+      <div component="input">
+        <input type="tel" placeholder="Mobile number"
           ng-model="mobileNumber" />
+
+        <input type="tel" placeholder="PIN" ng-model="pin" />
       </div>
-      <div>
-        <input type="tel" placeholder="The PIN we sent you" maxlength="4"
-          ng-model="pin" />
-      </div>
-      <div>
+      <div component="resend">
         <button ng-click="cmn.resendPin()">Resend PIN</button>
       </div>
-      <div>
+      <div component="confirm">
         <button ng-click="cmn.confirmMobileNumber()">Confirm mobile number</button>
       </div>
     </div>

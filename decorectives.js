@@ -25,7 +25,15 @@
         var subScope = scope[namespace] = {};
         subScope.resendPin = resendPin;
         subScope.confirmMobileNumber = confirmMobileNumber;
-      }
+      },
+
+      template: '' +
+        '<div ng-transclude></div>' +
+        '<div template="templates.input"></div>' +
+        '<hr />' +
+        '<div template="templates.resend"></div>' +
+        '<hr />' +
+        '<div template="templates.confirm"></div>'
     };
   }]);
 
@@ -50,12 +58,7 @@
       controller: CompositeCtrl,
       link: function(scope, elem, attrs) {
         console.log('Linking composite...');
-      },
-
-      template: '' +
-        '<div ng-transclude></div>' +
-        '<div>First: <div template="templates.first"></div></div>' +
-        '<div>Second: <div template="templates.second"></div></div>'
+      }
     };
   }]);
 
