@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="decorectives">
+  <head>
+    <title>Decorectives</title>
+
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.min.css" />
+
+    <style type="text/css">
+    </style>
+  </head>
+  <body ng-controller="HomeCtrl">
+    <div confirm-mobile-number="cmn">
+      <div>
+        <input type="tel" placeholder="Your mobile number"
+          ng-model="mobileNumber" />
+      </div>
+      <div>
+        <input type="tel" placeholder="The PIN we sent you" maxlength="4"
+          ng-model="pin" />
+      </div>
+      <div>
+        <button ng-click="cmn.resendPin()">Resend PIN</button>
+      </div>
+      <div>
+        <button ng-click="cmn.confirmMobileNumber()">Confirm mobile number</button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="decorectives.js"></script>
+  </body>
+</html>
